@@ -25,8 +25,14 @@
     <div class="church" aria-hidden="true"></div>
     <div class="candle" aria-hidden="true"></div>
 
-    <!-- A few flecks of blood by the top bar -->
-    <div class="bleed" aria-hidden="true"></div>
+    <!-- Blood running down from the top edge -->
+    <div class="drips" aria-hidden="true">
+        <span style="left:9%;  --len:58vh; --w:4px"></span>
+        <span style="left:24%; --len:34vh; --w:3px"></span>
+        <span style="left:47%; --len:70vh; --w:5px"></span>
+        <span style="left:63%; --len:28vh; --w:3px"></span>
+        <span style="left:82%; --len:50vh; --w:4px"></span>
+    </div>
 
     <nav class="nav">
         <a class="nav-name" href="#top">Sameer Shah</a>
@@ -42,30 +48,47 @@
 
         <!-- Hero -->
         <header class="hero">
-            <p class="overline">Offensive security research</p>
-            <h1 class="titlemark">Sameer Shah</h1>
-            <p class="epithet"><img src="skull_insignia.png" alt="" class="sigil">The Chosen One</p>
-            <p class="hero-line">I study how strong things break.</p>
-            <blockquote class="epigraph">
-                Every system confesses what it fears. Sit with it long enough and you hear it.
-            </blockquote>
-            <p class="founder">Founder of <a href="https://1000beacons.com" target="_blank" rel="noopener">1000 Beacons</a>.</p>
+            <div class="hero-grid">
+                <aside class="sigil-card">
+                    <div class="sigil-frame">
+                        <img src="skull_insignia.png" alt="Skull sigil" class="sigil-img">
+                    </div>
+                    <div class="sigil-label">The Chosen One</div>
+                </aside>
+                <div class="hero-text">
+                    <p class="overline">Offensive security research</p>
+                    <h1 class="titlemark">Sameer Shah</h1>
+                    <p class="hero-line">I study how strong things break.</p>
+                    <blockquote class="epigraph">
+                        Every system confesses what it fears. Sit with it long enough and you hear it.
+                    </blockquote>
+                    <p class="founder">Founder of <a href="https://1000beacons.com" target="_blank" rel="noopener">1000 Beacons</a>.</p>
+                </div>
+            </div>
         </header>
 
         <!-- Creed -->
         <section id="creed" class="section">
             <span class="marker">Creed</span>
             <h2 class="section-title">The hundred cuts</h2>
-            <p class="lede">
-                I do not out-muscle a defense built by capable people. I read it until its idea
-                of the world stops matching the machine, then press on that one seam until it opens.
-            </p>
-            <ul class="seams">
-                <li>Kernel filters that trust the wrong path.</li>
-                <li>Delegation left to rot for twenty years.</li>
-                <li>Agents that still honor a signed, forgotten driver.</li>
-                <li>Aligned models that bleed under patience.</li>
-            </ul>
+            <div class="creed-grid">
+                <figure class="plate">
+                    <img src="covert_whisper.jpg" alt="Two women, one leaning in to whisper to the other">
+                    <figcaption>The quietest channel is a whisper.</figcaption>
+                </figure>
+                <div class="creed-body">
+                    <p class="lede">
+                        I do not out-muscle a defense built by capable people. I read it until its idea
+                        of the world stops matching the machine, then press on that one seam until it opens.
+                    </p>
+                    <ul class="seams">
+                        <li>Kernel filters that trust the wrong path.</li>
+                        <li>Delegation left to rot for twenty years.</li>
+                        <li>Agents that still honor a signed, forgotten driver.</li>
+                        <li>Aligned models that bleed under patience.</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <!-- Work -->
