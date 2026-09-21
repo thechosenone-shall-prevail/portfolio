@@ -107,45 +107,29 @@ body::after {
         repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 1px, transparent 1px, transparent 3px);
 }
 
-/* Blood spatter — stains that cling to the nave while everything scrolls */
-.bleed,
-.pool {
+/* A few flecks of blood along the top bar — nothing more */
+.bleed {
     position: fixed;
+    top: 0;
     left: 0;
     right: 0;
+    height: 130px;
     z-index: -1;
     pointer-events: none;
-    background-repeat: no-repeat;
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.65));
-}
-
-.bleed {
-    top: 0;
-    height: 70vh;
-    background-image: url('spatter-top.svg');
-    background-position: top center;
-    background-size: 100% auto;
-    opacity: 0.94;
-    animation: seep 1.5s ease-out both;
-}
-
-.pool {
-    bottom: 0;
-    height: 34vh;
-    background-image: url('spatter-pool.svg');
-    background-position: bottom center;
-    background-size: 100% auto;
-    opacity: 0.86;
+    background: url('spatter-top.svg') top center / 100% auto no-repeat;
+    opacity: 0.9;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+    animation: seep 1.4s ease-out both;
 }
 
 @keyframes seep {
-    from { opacity: 0; transform: translateY(-14px); }
-    to { opacity: 0.94; transform: none; }
+    from { opacity: 0; }
+    to { opacity: 0.9; }
 }
 
 @media (prefers-reduced-motion: reduce) {
     .candle { animation: none; opacity: 0.8; }
-    .bleed { animation: none; opacity: 0.94; }
+    .bleed { animation: none; opacity: 0.9; }
     html { scroll-behavior: auto; }
 }
 
