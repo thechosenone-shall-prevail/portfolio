@@ -107,66 +107,45 @@ body::after {
         repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 1px, transparent 1px, transparent 3px);
 }
 
-/* Blood seeping down from the top edge, into the nave */
-.bleed {
+/* Blood spatter — stains that cling to the nave while everything scrolls */
+.bleed,
+.pool {
     position: fixed;
-    top: 0;
     left: 0;
     right: 0;
-    height: 46vh;
     z-index: -1;
     pointer-events: none;
-    overflow: hidden;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.65));
 }
 
-.bleed span {
-    position: absolute;
-    top: -2px;
-    width: 2px;
-    border-radius: 0 0 3px 3px;
-    background: linear-gradient(180deg, rgba(122, 13, 19, 0) 0%, var(--blood) 34%, var(--blood-lit) 100%);
-    box-shadow: 0 0 7px rgba(150, 17, 24, 0.55);
-    opacity: 0.72;
+.bleed {
+    top: 0;
+    height: 70vh;
+    background-image: url('spatter-top.svg');
+    background-position: top center;
+    background-size: 100% auto;
+    opacity: 0.94;
+    animation: seep 1.5s ease-out both;
 }
 
-/* the bead of blood gathered at each streak's end, falling slowly */
-.bleed span::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: -1.5px;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--blood-lit);
-    box-shadow: 0 0 8px rgba(178, 21, 34, 0.85);
-    animation: fall 11s ease-in infinite;
+.pool {
+    bottom: 0;
+    height: 34vh;
+    background-image: url('spatter-pool.svg');
+    background-position: bottom center;
+    background-size: 100% auto;
+    opacity: 0.86;
 }
 
-.bleed span:nth-child(1) { left: 7%;  height: 20vh; animation-delay: 0s; }
-.bleed span:nth-child(2) { left: 21%; height: 33vh; opacity: 0.6; }
-.bleed span:nth-child(3) { left: 38%; height: 14vh; }
-.bleed span:nth-child(4) { left: 52%; height: 40vh; opacity: 0.8; }
-.bleed span:nth-child(5) { left: 66%; height: 12vh; opacity: 0.55; }
-.bleed span:nth-child(6) { left: 79%; height: 27vh; }
-.bleed span:nth-child(7) { left: 93%; height: 18vh; opacity: 0.6; }
-
-.bleed span:nth-child(2)::after { animation-delay: 2.5s; }
-.bleed span:nth-child(3)::after { animation-delay: 6s; }
-.bleed span:nth-child(4)::after { animation-delay: 1.3s; }
-.bleed span:nth-child(5)::after { animation-delay: 7.8s; }
-.bleed span:nth-child(6)::after { animation-delay: 4.2s; }
-.bleed span:nth-child(7)::after { animation-delay: 9s; }
-
-@keyframes fall {
-    0%, 62% { transform: translateY(0); opacity: 0; }
-    66% { opacity: 0.95; }
-    100% { transform: translateY(60px); opacity: 0; }
+@keyframes seep {
+    from { opacity: 0; transform: translateY(-14px); }
+    to { opacity: 0.94; transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
     .candle { animation: none; opacity: 0.8; }
-    .bleed span::after { animation: none; }
+    .bleed { animation: none; opacity: 0.94; }
     html { scroll-behavior: auto; }
 }
 
