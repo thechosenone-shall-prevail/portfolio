@@ -53,28 +53,18 @@ body {
     position: fixed;
     inset: 0;
     z-index: -3;
-    background: url('church_bg.jpg') no-repeat center 18% / cover;
-    filter: brightness(0.68) contrast(1.05) saturate(1.08);
+    background: url('church_bg.jpg') no-repeat center 16% / cover;
+    filter: brightness(0.84) contrast(1.04) saturate(1.06);
 }
 
+/* just enough vignette and a floor of shadow to keep text readable */
 .church::after {
     content: "";
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 74% 52% at 50% 11%, rgba(150, 17, 24, 0.30) 0%, transparent 62%),
-        radial-gradient(ellipse 62% 44% at 50% 30%, rgba(122, 13, 19, 0.16) 0%, transparent 68%),
-        radial-gradient(ellipse 130% 100% at 50% 40%, transparent 34%, rgba(6, 5, 10, 0.46) 100%),
-        linear-gradient(180deg, rgba(16, 4, 7, 0.14) 0%, rgba(6, 5, 10, 0.40) 52%, rgba(8, 4, 8, 0.86) 100%);
-}
-
-/* a faint crimson wash, kept light so the nave stays clear */
-.church::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(122, 13, 19, 0.06) 0%, rgba(58, 2, 7, 0.05) 100%);
-    mix-blend-mode: multiply;
+        radial-gradient(ellipse 135% 105% at 50% 34%, transparent 46%, rgba(6, 5, 10, 0.34) 100%),
+        linear-gradient(180deg, rgba(6, 5, 10, 0.06) 0%, rgba(6, 5, 10, 0.24) 55%, rgba(8, 4, 8, 0.80) 100%);
 }
 
 /* A single warm point of candlelight, breathing slowly */
@@ -103,19 +93,6 @@ body::after {
     opacity: 0.04;
     background-image:
         repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 1px, transparent 1px, transparent 3px);
-}
-
-/* Old blood, dried short and dark down from the top edge — static */
-.drips {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 42vh;
-    z-index: -1;
-    pointer-events: none;
-    opacity: 0.82;
-    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.6));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -172,7 +149,7 @@ em { font-style: italic; color: var(--bone); }
 /* --------------------------------------------------------------------------
    Layout rhythm
    -------------------------------------------------------------------------- */
-main { position: relative; z-index: 1; }
+main { position: relative; z-index: 1; text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5); }
 
 .hero,
 .section {
@@ -302,30 +279,6 @@ main { position: relative; z-index: 1; }
 
 .section-last { padding-bottom: clamp(5rem, 16vh, 10rem); }
 
-/* the marker holds the slow crimson drip */
-.marker {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0.6rem;
-    font-family: var(--carved);
-    font-size: 0.66rem;
-    letter-spacing: 0.34em;
-    text-transform: uppercase;
-    color: var(--ash-faint);
-    margin-bottom: 2.2rem;
-}
-
-/* a small red cross before each header, no blood */
-.marker::before {
-    content: "\271D"; /* ✝ latin cross */
-    color: var(--blood-lit);
-    font-size: 1.1rem;
-    line-height: 1;
-    letter-spacing: 0;
-    transform: translateY(1px);
-    text-shadow: 0 0 10px rgba(178, 21, 34, 0.35);
-}
-
 .section-title {
     font-family: var(--carved);
     font-weight: 500;
@@ -334,6 +287,16 @@ main { position: relative; z-index: 1; }
     letter-spacing: 0.02em;
     line-height: 1.1;
     margin-bottom: 2rem;
+}
+
+/* a small red cross leads each section heading */
+.section-title::before {
+    content: "\271D"; /* ✝ latin cross */
+    color: var(--blood-lit);
+    font-size: 0.62em;
+    margin-right: 0.5em;
+    vertical-align: 0.18em;
+    text-shadow: 0 0 12px rgba(178, 21, 34, 0.35);
 }
 
 .lede {
