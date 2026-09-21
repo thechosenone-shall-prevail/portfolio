@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sameer Shah</title>
+    <meta name="description"
+        content="Offensive security research. Windows kernel internals, Active Directory attack graphs, EDR evasion, zero-day research.">
+    <meta name="author" content="Sameer Shah">
+    <meta property="og:title" content="Sameer Shah">
+    <meta property="og:description"
+        content="Offensive security research. Windows kernel internals, Active Directory, EDR evasion.">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@300;400;500;700&family=UnifrakturCook:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Dark overlay over the church background image -->
+    <div class="bg-overlay" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <div class="nav-brand">
+                <img src="assets/skull_insignia.png" alt="" class="nav-skull">
+                <div>
+                    <div class="nav-name">Sameer Shah</div>
+                    <div class="nav-sub">Offensive Security Research</div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#writings">Writings</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- ============================
+             HERO
+             ============================ -->
+        <section class="hero">
+            <div class="hero-grid">
+
+                <div class="skull-card">
+                    <div class="skull-frame">
+                        <img src="assets/skull_insignia.png" alt="Insignia" class="skull-img">
+                    </div>
+                    <div class="skull-name">THE CHOSEN ONE</div>
+                </div>
+
+                <div class="hero-text">
+                    <p class="hero-label">Offensive Security Research · Windows Internals</p>
+                    <h1>I study how strong things <em>break</em>.</h1>
+                    <blockquote class="hero-epigraph">
+                        &ldquo;Every system confesses what it fears. You only have to sit with it long enough to
+                        hear.&rdquo;
+                    </blockquote>
+                    <p class="hero-body">
+                        I'm Sameer. I take apart Windows the way a locksmith studies a lock, slowly, with respect for
+                        whoever built it. Most of my work lives in the kernel, inside Active Directory, and in the quiet
+                        gap where a defense's idea of itself stops matching what the machine actually does. When I find
+                        that gap, I build the one thing that proves it, then I hand it to the people who can fix it.
+                    </p>
+                    <div class="hero-founder">
+                        <span class="founder-label">Founder</span>
+                        <span class="founder-text">
+                            Building <a href="https://1000beacons.com" target="_blank"
+                                rel="noopener">1000 Beacons</a>.
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ============================
+             PHILOSOPHY
+             ============================ -->
+        <section id="philosophy" class="section">
+            <div class="section-label">Philosophy</div>
+            <h2 class="section-title">The Hundred Cuts</h2>
+
+            <div class="philosophy-grid">
+
+                <figure class="painting">
+                    <div class="painting-frame">
+                        <img src="assets/covert_whisper.jpg"
+                            alt="Two women in low light, one leaning in to whisper to the other">
+                    </div>
+                    <figcaption class="painting-caption">
+                        The quietest channel is a whisper, not a payload.
+                    </figcaption>
+                </figure>
+
+                <div class="philosophy-body">
+                    <blockquote class="philosophy-lede">
+                        Code isn't my identity. It's a tool, the same as Ghidra, WinDbg, or a hand-crafted LDAP filter.
+                        What I actually do is study how well-built enterprise systems fail, then build the one artifact
+                        that proves it in language the vendor and the responders are forced to act on.
+                    </blockquote>
+
+                    <p class="philosophy-text">
+                        I don't try to out-muscle a defense that was engineered by capable people. I read it until I find
+                        the one place its model of the world disagrees with the machine's. A volume string compared the
+                        wrong way. A file trusted a microsecond too long. A delegation edge nobody has looked at since
+                        2004. I press on exactly that seam until the whole thing opens.
+                    </p>
+
+                    <ul class="seam-list">
+                        <li><strong>Kernel trust errors.</strong> Minifilters that make blocking decisions on the wrong
+                            volume path or an unsanitized user-mode pointer.</li>
+                        <li><strong>AD trust decay.</strong> Delegation and domain trusts designed two decades ago,
+                            defenseless against offline graph math.</li>
+                        <li><strong>Ring-0 severance.</strong> Endpoint agents that trust a signed legacy driver, so a
+                            single kernel write can sweep the whole EDR stack.</li>
+                        <li><strong>Adversarial extraction.</strong> Aligned models whose safety collapses under a
+                            budgeted campaign of distillation queries.</li>
+                    </ul>
+
+                    <!-- Authentic MEEDRBleeder.ps1 terminal output -->
+                    <div class="meedr-banner">
+                        <div class="banner-label">STDOUT · MEEDRBleeder.ps1</div>
+                        <pre class="banner-text">
+   M E E D R   B L E E D E R
+
+   When a software is well-engineered, you don't evade it.
+    You bleed it with a hundred cuts.
+
+
+   RING ZERO DOES NOT NEGOTIATE
+
+   M E E D R   h a s   b l e d   o u t . . . . . . .
+
+   You tried to manage the engine. Now it's just smoking garbage. GG.</pre>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ============================
+             WORK / PROJECTS
+             ============================ -->
+        <section id="work" class="section">
+            <div class="section-label">Work</div>
+            <h2 class="section-title">Projects</h2>
+
+            <div class="projects-grid">
+
+                <!-- MEEDRBleeder (Featured) -->
+                <div class="project-card featured">
+                    <div class="card-header">
+                        <span class="card-domain">Kernel Evasion · Ring 0</span>
+                        <span class="card-status acknowledged">Vendor Acknowledged (Zoho)</span>
+                    </div>
+                    <h3 class="card-title">MEEDR Bleeder</h3>
+                    <p class="card-subtitle">Circumventing ManageEngine EDR from Ring 0 and User-Mode</p>
+                    <p class="card-desc">
+                        Two findings against ManageEngine UEMS/EDR under full enterprise policy. A semantic comparison
+                        defect in the anti-ransomware minifilter lets you destroy volume shadow copies silently. A BYOVD
+                        chain via a signed vulnerable driver terminates the entire EDR daemon stack from kernel memory.
+                    </p>
+                    <div class="card-footer">
+                        <span class="card-tech">CVE-2023-52271 · C · ASM</span>
+                        <div class="card-links">
+                            <button class="card-link" onclick="openDossier('meedr-bleeder')">Read</button>
+                            <a class="card-link"
+                                href="https://github.com/thechosenone-shall-prevail/MEEDRBleeder" target="_blank"
+                                rel="noopener">GitHub ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Burning Sun -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <span class="card-domain">Windows LPE</span>
+                        <span class="card-status zeroday">0-day, unpatched</span>
+                    </div>
+                    <h3 class="card-title">Burning Sun</h3>
+                    <p class="card-subtitle">Windows Defender Signature Pipeline Race to SYSTEM</p>
+                    <p class="card-desc">
+                        Local privilege escalation to <code>NT AUTHORITY\SYSTEM</code> via a TOCTOU race in the Defender
+                        real-time protection pipeline. Chains Cloud Files API placeholders, NTFS oplocks, junction
+                        redirection into System32, and Storage Tiering Engine COM activation.
+                    </p>
+                    <div class="card-footer">
+                        <span class="card-tech">C++ · Win32 Internals</span>
+                        <div class="card-links">
+                            <button class="card-link" onclick="openDossier('burning-sun')">Read</button>
+                            <a class="card-link"
+                                href="https://github.com/thechosenone-shall-prevail/Burning-Sun" target="_blank"
+                                rel="noopener">GitHub ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cold Relay -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <span class="card-domain">Active Directory</span>
+                    </div>
+                    <h3 class="card-title">Cold Relay</h3>
+                    <p class="card-subtitle">Deterministic Active Directory Assessment</p>
+                    <p class="card-desc">
+                        A single Go binary that maps a domain's attack paths end to end. Ingests LDAP, Kerberos, SMB,
+                        DNS, GPO, delegation paths, and AD CS certificate templates, then builds deterministic attack
+                        graphs with every finding tagged <em>validated</em>, <em>likely</em>, or <em>theoretical</em>
+                        from the evidence it actually collected.
+                    </p>
+                    <div class="card-footer">
+                        <span class="card-tech">Go</span>
+                        <div class="card-links">
+                            <a class="card-link"
+                                href="https://github.com/thechosenone-shall-prevail/cold-relay" target="_blank"
+                                rel="noopener">GitHub ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software Butcher -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <span class="card-domain">Adversarial AI</span>
+                    </div>
+                    <h3 class="card-title">Software Butcher</h3>
+                    <p class="card-subtitle">Autonomous Red Team Harness</p>
+                    <p class="card-desc">
+                        An autonomous adversarial assessment engine. A central reasoning Brain formulates hypotheses
+                        against target infrastructure. Shelves and Adapters translate tactical intent into tool
+                        executions. A persistent FindingStore synthesizes an evidence-backed verdict: <em>secure</em>,
+                        <em>partially hardened</em>, or <em>compromised</em>.
+                    </p>
+                    <div class="card-footer">
+                        <span class="card-tech">Python</span>
+                        <div class="card-links">
+                            <a class="card-link"
+                                href="https://github.com/thechosenone-shall-prevail/software-butcher"
+                                target="_blank" rel="noopener">GitHub ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KERB-SLEUTH -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <span class="card-domain">Kerberos</span>
+                    </div>
+                    <h3 class="card-title">KERB-SLEUTH</h3>
+                    <p class="card-subtitle">Kerberos Triage CLI</p>
+                    <p class="card-desc">
+                        Go CLI for internal Active Directory engagements. Automates live LDAP enumeration of
+                        AS-REP-roastable and Kerberoastable accounts, parses ticket encryption types, extracts hash
+                        structures, and pipes them into offline cracking pipelines.
+                    </p>
+                    <div class="card-footer">
+                        <span class="card-tech">Go · Kerberos Protocol</span>
+                        <div class="card-links">
+                            <a class="card-link"
+                                href="https://github.com/thechosenone-shall-prevail/KERB-SLEUTH" target="_blank"
+                                rel="noopener">GitHub ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Minimum Viable Distillation -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <span class="card-domain">Adversarial AI</span>
+                    </div>
+                    <h3 class="card-title">Minimum Viable Distillation</h3>
+                    <p class="card-subtitle">The Patience Attack</p>
+                    <p class="card-desc">
+                        Consumer-hardware knowledge distillation experiment reframing distillation as an extraction
+                        primitive against black-box LLMs. Measures how much capability transfers from a domain-expert
+                        teacher to a 1.1B student across strict query budgets on a single consumer GPU.
+                    </p>
+                    <div class="card-footer">
+                        <span class="card-tech">PyTorch</span>
+                        <div class="card-links">
+                            <a class="card-link"
+                                href="https://github.com/thechosenone-shall-prevail/Minimum-Viable-Distillation"
+                                target="_blank" rel="noopener">GitHub ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ============================
+             WRITINGS
+             ============================ -->
+        <section id="writings" class="section">
+            <div class="section-label">Writings</div>
+            <h2 class="section-title">Technical Writing</h2>
+
+            <div class="writings-list">
+
+                <div class="writing-item" onclick="openDossier('meedr-bleeder')">
+                    <div>
+                        <div class="writing-meta">
+                            <span class="writing-domain">Kernel Evasion</span>
+                            <span class="writing-time">15 min</span>
+                        </div>
+                        <h3 class="writing-title">MEEDR Bleeder: Circumventing ManageEngine EDR Minifilter From
+                            Ring 0 &amp; User-Mode</h3>
+                        <p class="writing-abstract">
+                            Technical report on the semantic comparison defect in MEARWFltDriver.sys and the BYOVD
+                            kernel process termination chain via CVE-2023-52271.
+                        </p>
+                    </div>
+                    <div class="writing-cta">Read →</div>
+                </div>
+
+                <div class="writing-item" onclick="openDossier('burning-sun')">
+                    <div>
+                        <div class="writing-meta">
+                            <span class="writing-domain">Windows LPE · 0-day</span>
+                            <span class="writing-time">18 min</span>
+                        </div>
+                        <h3 class="writing-title">Burning Sun: Windows Defender Signature Pipeline Race Condition
+                            to SYSTEM</h3>
+                        <p class="writing-abstract">
+                            Cloud Files API placeholder staging, NTFS oplock interruption, and object manager junction
+                            redirection to achieve NT AUTHORITY\SYSTEM DLL drops into System32.
+                        </p>
+                    </div>
+                    <div class="writing-cta">Read →</div>
+                </div>
+
+                <div class="writing-item" onclick="openDossier('ad-advanced')">
+                    <div>
+                        <div class="writing-meta">
+                            <span class="writing-domain">Active Directory</span>
+                            <span class="writing-time">70 min</span>
+                        </div>
+                        <h3 class="writing-title">Active Directory Advanced Attacks: GPO, Delegation, and
+                            Persistence</h3>
+                        <p class="writing-abstract">
+                            GPO abuse pipelines, Kerberos delegation chains, NTLM relay mechanics, and the complete
+                            ticket family: Golden, Silver, Diamond, Sapphire.
+                        </p>
+                    </div>
+                    <div class="writing-cta">Read →</div>
+                </div>
+
+                <div class="writing-item" onclick="openDossier('disk-wiper')">
+                    <div>
+                        <div class="writing-meta">
+                            <span class="writing-domain">Win32 Storage Internals</span>
+                            <span class="writing-time">20 min</span>
+                        </div>
+                        <h3 class="writing-title">Scorched Earth: Low-Level Windows Disk Wiper Mechanics in C</h3>
+                        <p class="writing-abstract">
+                            Physical drive access via Win32 device handles, MBR and GPT partition table destruction, and
+                            storage filter driver telemetry models.
+                        </p>
+                    </div>
+                    <div class="writing-cta">Read →</div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ============================
+             CONTACT
+             ============================ -->
+        <section id="contact" class="section section-last">
+            <div class="section-label">Contact</div>
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-intro">
+                Open to responsible disclosure discussions, offensive engagements, and research collaboration.
+            </p>
+
+            <div class="contact-grid">
+                <a class="contact-tile" href="https://github.com/thechosenone-shall-prevail" target="_blank"
+                    rel="noopener">
+                    <span class="tile-name">GitHub</span>
+                    <span class="tile-handle">@thechosenone-shall-prevail</span>
+                </a>
+
+                <a class="contact-tile" href="https://1000beacons.com" target="_blank" rel="noopener">
+                    <span class="tile-name">1000 Beacons</span>
+                    <span class="tile-handle">1000beacons.com</span>
+                </a>
+
+                <a class="contact-tile" href="mailto:godmaximus663@gmail.com">
+                    <span class="tile-name">Email</span>
+                    <span class="tile-handle">godmaximus663@gmail.com</span>
+                </a>
+
+                <a class="contact-tile" href="https://app.hackthebox.com/" target="_blank" rel="noopener">
+                    <span class="tile-name">Hack The Box</span>
+                    <span class="tile-handle">Top 0.5%</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            &copy; 2026 Sameer Shah
+        </div>
+    </footer>
+
+
+    <!-- ============================
+         DOSSIER MODAL READER
+         ============================ -->
+    <div id="classified-modal" class="modal-backdrop">
+        <div class="modal-window">
+            <div class="modal-header">
+                <div class="modal-title">Technical Dossier</div>
+                <button class="modal-close" id="modal-close-btn">[ESC]</button>
+            </div>
+            <div class="modal-body" id="modal-dossier-body">
+                <!-- Injected by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <script src="articles-data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
