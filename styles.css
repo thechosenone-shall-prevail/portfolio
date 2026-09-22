@@ -7,10 +7,10 @@
     --ink-soft: #0b0910;
     --stone: #171219;
 
-    --bone: #f5f0ea;
-    --bone-dim: #ddd6cd;
-    --ash: #ada399;
-    --ash-faint: #857c72;
+    --bone: #f7f3ee;
+    --bone-dim: #ebe6df;
+    --ash: #c8c1b8;
+    --ash-faint: #aba29a;
 
     --blood: #7a0d13;
     --blood-lit: #b21522;
@@ -138,10 +138,11 @@ em { font-style: italic; color: var(--bone); }
     gap: clamp(16px, 3vw, 34px);
     list-style: none;
     font-family: var(--carved);
-    font-size: 0.66rem;
+    font-size: 0.68rem;
     letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: var(--ash);
+    color: var(--bone-dim);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
 }
 
 .nav-links a:hover { color: var(--bone); }
@@ -473,7 +474,8 @@ main { position: relative; z-index: 1; text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5
     font-size: 0.66rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: var(--ash-faint);
+    color: var(--ash);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
     border-top: 1px solid var(--hair);
 }
 
